@@ -1,0 +1,10 @@
+FROM centos:7 as client-image
+RUN mkdir /custum-repo
+COPY --from=server-image /custum-repo /custum-repo
+RUN yum-config-manager --add-repo=file:///custum-repo/custum.repo
+RUN yum-config-manager --disablerepo=*
+RUN yum-config-manager --enable custum.repo
+RUN yum -y install httpd
+COPY ./validation.sh /
+CMD ["./validation.sh"]
+

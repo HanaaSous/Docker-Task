@@ -1,0 +1,19 @@
+#yum install -y yum-utils
+#yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+#yum-config-manager --enable docker-ce-nightly
+#yum-config-manager --enable docker-ce-test
+#yum install docker-ce docker-ce-cli containerd.io
+#systemctl start docker
+#mkdir /docker-server && cd /docker-server
+#vi Dockerfile
+#vi server-script.sh
+#chmod +x server-script.sh
+#./server-scripts.sh
+#mkdir docker-client && cd /docker-client
+#vi Dockerfile
+#vi client-script.sh
+#chmod +x client-script.sh
+#vi validation.sh
+#chmod +x validation.sh
+#chmod o+x validation.sh
+#./client-script.sh

@@ -1,0 +1,12 @@
+FROM centos:7 as server-image
+RUN mkdir -p /custum-repo
+RUN yum --downloadonly --downloaddir=/custum-repo -y install httpd
+RUN yum -y install httpd
+RUN yum -y install createrepo
+RUN createrepo /custum-repo
+RUN touch /custum-repo/custum.repo
+RUN echo "[custumrepo]" >> /custum-repo/custum.repo
+RUN echo "name=Custum Repository" >> /custum-repo/custum.repo
+RUN echo "baseurl=file:///custum-repo/" >> /custum-repo/custum.repo
+RUN echo "enabled=1" >> /custum-repo/custum.repo
+RUN echo "gpgcheck=0" >> /custum-repo/custum.repo
