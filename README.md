@@ -1,5 +1,5 @@
 # Docker-Task
-## Apache server/client using Docker
+## Apache server/client images using Docker
 #### **from server side==> 
 * download httpd from centos7
 * create custum repo contains rpms for httpd
@@ -15,7 +15,8 @@
 
 ## STEPS:
 1) install docker at your machine and start it.(for instulation ==> https://docs.docker.com/engine/install/centos/)
-- #yum install -y yum-utils
+- ##### To use HTTP, install the Apache web services package with the command
+  - yum install -y yum-utils 
 - #yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 - #yum-config-manager --enable docker-ce-nightly
 - #yum-config-manager --enable docker-ce-test
