@@ -36,15 +36,24 @@
    - ##### make server-script.sh file executable 
      - #chmod +x server-scripts.sh
    - ##### execute server-script.sh file
-     - #./server-scripts.sh                                                             
+     - #./server-scripts.sh      
 
-3)create client directory with Dockerfile and scripts.sh files : 
-- #mkdir /client && cd /client
-- #vi Dockerfile
-- #vi client-scripts.sh
-- #chmod +x client-scripts.sh
-- #./client-scripts.sh  
-4)create validation script : 
-- #vi validation.sh
-- #chmod +x validation.sh
-- #./validation.sh
+                                                      
+3) ### create client directory with Dockerfile and scripts.sh files :
+   - ##### create a directory named client and enter it
+     - #mkdir /server && cd /server
+   - ##### create Dockerfile which will use to build client-image
+     - #vi Dockerfile
+   - ##### create client-scripts.sh file which contains commands to build client-image and run a container from it
+     - #vi client-scripts.sh
+   - ##### make client-script.sh file executable 
+     - #chmod +x client-scripts.sh
+   - ##### execute client-script.sh file
+     - #./client-script.sh
+ 
+4) ### create validation script : 
+   after running ./client-script.sh you will be moved to client-container bash
+   - ##### create validation file to check if httpd server is installed at client-container or not by using followed commands :
+     - #vi validation.sh
+     - #chmod +x validation.sh
+     - #./validation.sh
