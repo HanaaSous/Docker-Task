@@ -1,17 +1,17 @@
 # Docker-Task
 ## Apache server/client using Docker
-###### **from server side==> 
+#### **from server side==> 
 * download httpd from centos7
 * create custum repo contains rpms for httpd
 * run server on 8899
 * create scripts file to build server-image and run docker container
 
-###### **from client side ==> 
+#### **from client side ==> 
 -request custum repo from server
 - use this repo to download httpd
 - - create script file to build client-image and run a container>
       
-###### ** create script to validate the download httpd rpm on client
+#### ** create script to validate the download httpd rpm on client
 
 ## STEPS:
 1) install docker at your machine and start it.(for instulation ==> https://docs.docker.com/engine/install/centos/)
