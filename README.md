@@ -26,12 +26,17 @@
    - ##### Start Docker
      - #systemctl start docker
 
-2) create server directory with Dockerfile and scripts.sh files :
-- #mkdir /server && cd /server
-- #vi Dockerfile
-- #vi server-scripts.sh
-- #chmod +x server-scripts.sh
-- #./server-scripts.sh                                                             
+2) ### create server directory with Dockerfile and scripts.sh files :
+   - ##### create a directory named server and enter it
+     - #mkdir /server && cd /server
+   - ##### create Dockerfile which will use to build server-image
+     - #vi Dockerfile
+   - ##### create server-scripts.sh file which contains commands to build server-image and run a container from it
+     - #vi server-scripts.sh
+   - ##### make server-script.sh file executable 
+     - #chmod +x server-scripts.sh
+   - ##### execute server-script.sh file
+     - #./server-scripts.sh                                                             
 
 3)create client directory with Dockerfile and scripts.sh files : 
 - #mkdir /client && cd /client
