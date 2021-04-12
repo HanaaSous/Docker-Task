@@ -13,7 +13,8 @@
 #vi Dockerfile
 #vi client-script.sh
 #chmod +x client-script.sh
+#./client-script.sh
+#docker exec -it client-container ash
 #vi validation.sh
 #chmod +x validation.sh
-#chmod o+x validation.sh
-#./client-script.sh
+#./validation.sh
