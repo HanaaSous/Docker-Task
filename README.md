@@ -7,9 +7,9 @@
 * create scripts file to build server-image and run docker container
 
 #### **from client side ==> 
--request custum repo from server
+- request custum repo from server
 - use this repo to download httpd
-- - create script file to build client-image and run a container>
+- create script file to build client-image and run a container>
       
 #### ** create script to validate the download httpd rpm on client
 
