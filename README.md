@@ -1,8 +1,7 @@
-<p>
+<p align="center">
    # Docker-Task
-Apache server/client using Docker
 </p>
-
+<p>Apache server/client using Docker</p>
 **from server side==> 
 -download httpd from centos7
 -create custum repo contains rpms for httpd
