@@ -54,6 +54,7 @@
 4) ### create validation script : 
    after running ./client-script.sh you will be moved to client-container bash
    - ##### create validation file to check if httpd server is installed at client-container or not by using followed commands :
+      validation file will execute commands to echo "httpd is installed" if the service is installed or echo "httpd is not installed" if the service is not installed
      - #vi validation.sh
      - #chmod +x validation.sh
      - #./validation.sh
