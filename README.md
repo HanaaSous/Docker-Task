@@ -1,5 +1,9 @@
 # Docker-Task
 Apache server/client using Docker
+<p align="center">
+   # Docker-Task
+Apache server/client using Docker
+</p>
 
 **from server side==> 
 -download httpd from centos7
