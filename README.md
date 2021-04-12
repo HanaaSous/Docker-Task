@@ -1,5 +1,6 @@
 # Docker-Task
 Apache server/client using Docker
+
 **from server side==> -download httpd from centos7
                       -create custum repo contains rpms for httpd
                       -run server on 8899
@@ -13,17 +14,24 @@ Apache server/client using Docker
 
 STEPS:
 1) install docker at your machine and start it.(for instulation ==> https://docs.docker.com/engine/install/centos/)
-2) create server directory with Dockerfile and scripts.sh files : #mkdir /server
-                                                                 #vi Dockerfile
-                                                                 #vi scripts.sh
-                                                                 #chmod +x scripts.sh
-                                                                 #./scripts.sh                                                             
+#yum install -y yum-utils
+#yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+#yum-config-manager --enable docker-ce-nightly
+#yum-config-manager --enable docker-ce-test
+#yum install docker-ce docker-ce-cli containerd.io
+#systemctl start docker
 
-3)create client directory with Dockerfile and scripts.sh files : #mkdir /client
+2) create server directory with Dockerfile and scripts.sh files : #mkdir /server && cd /server
                                                                  #vi Dockerfile
-                                                                 #vi scripts.sh
-                                                                 #chmod +x scripts.sh
-                                                                 #./scripts.sh  
+                                                                 #vi server-scripts.sh
+                                                                 #chmod +x server-scripts.sh
+                                                                 #./server-scripts.sh                                                             
+
+3)create client directory with Dockerfile and scripts.sh files : #mkdir /client && cd /client
+                                                                 #vi Dockerfile
+                                                                 #vi client-scripts.sh
+                                                                 #chmod +x client-scripts.sh
+                                                                 #./client-scripts.sh  
 4)create validation script : #vi validation.sh
                              #chmod +x validation.sh
                              #./validation.sh
