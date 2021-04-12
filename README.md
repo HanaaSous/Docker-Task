@@ -3,10 +3,10 @@
 </p>
 <p>Apache server/client using Docker</p>
 **from server side==> 
--download httpd from centos7
--create custum repo contains rpms for httpd
--run server on 8899
--create scripts file to build server-image and run docker container
+*download httpd from centos7
+*create custum repo contains rpms for httpd
+*run server on 8899
+*create scripts file to build server-image and run docker container
 
 **from client side ==> 
 -request custum repo from server
