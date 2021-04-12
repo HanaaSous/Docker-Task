@@ -15,16 +15,16 @@
 
 ## STEPS:
 1) ### install docker at your machine and start it.(for instulation ==> https://docs.docker.com/engine/install/centos/)
-- ##### SET UP THE REPOSITORY ==> Install the yum-utils package (which provides the yum-config-manager utility) and set up the stable repository
-  - yum install -y yum-utils 
-  - #yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-- ##### Enable the repository
-  - #yum-config-manager --enable docker-ce-nightly
-  - #yum-config-manager --enable docker-ce-test
-- ##### Install docker engine
-  - #yum install docker-ce docker-ce-cli containerd.io
-- ##### Start Docker
-  - #systemctl start docker
+  - ##### SET UP THE REPOSITORY ==> Install the yum-utils package (which provides the yum-config-manager utility) and set up the stable repository
+    - yum install -y yum-utils 
+    - #yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+  - ##### Enable the repository
+    - #yum-config-manager --enable docker-ce-nightly
+    - #yum-config-manager --enable docker-ce-test
+  - ##### Install docker engine
+    - #yum install docker-ce docker-ce-cli containerd.io
+  - ##### Start Docker
+    - #systemctl start docker
 
 2) create server directory with Dockerfile and scripts.sh files :
 - #mkdir /server && cd /server
