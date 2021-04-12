@@ -1,5 +1,6 @@
 FROM centos:7
 RUN mkdir -p /var/www/html/custum-repo
+RUN rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 RUN yum --downloadonly --downloaddir=/var/www/html/custum-repo -y install httpd
 RUN yum -y install httpd
 RUN yum -y install createrepo
