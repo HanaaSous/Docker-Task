@@ -1,6 +1,4 @@
-# Docker-Task
-Apache server/client using Docker
-<p align="center">
+<p>
    # Docker-Task
 Apache server/client using Docker
 </p>
