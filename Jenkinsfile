@@ -64,9 +64,9 @@ pipeline {
          stage('Testing ') {
              steps {
                  script{
-                  dockerImage2.inside(){
-                        sh 'pwd'
-                  }
+                  docker.image("client-image"+":$BUILD_NUMBER").inside {
+                     sh ' ./validation.sh'
+                    }
                  }
              }
              
