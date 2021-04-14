@@ -65,7 +65,7 @@ pipeline {
              steps {
                  script{
                   dockerImage2.inside(){
-                        sh './validation.sh'
+                        sh 'pwd'
                   }
                  }
              }
