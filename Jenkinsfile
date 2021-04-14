@@ -65,7 +65,9 @@ pipeline {
              steps {
                  script{
                   docker.image("client-image"+":$BUILD_NUMBER").inside {
-                     sh ' ./validation.sh'
+                      sh 'cd /'
+                      sh 'ls'
+                     
                     }
                  }
              }
