@@ -42,7 +42,17 @@ pipeline {
             }
         }
 
- 
+    stage('Cleaning up') { 
+
+            steps { 
+
+                sh "docker stop server-cont client-cont" 
+                sh "docker rm server-cont client-cont" 
+
+
+            }
+
+        } 
 
     }
 
