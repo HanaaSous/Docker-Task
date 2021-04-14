@@ -17,7 +17,7 @@ pipeline {
 
     stages { 
 
-        stage('Building our image') { 
+        stage('Building server-image ') { 
 
             steps { 
 
@@ -30,13 +30,34 @@ pipeline {
 
             } 
         }
-        
+          stage('Runing server-image ') { 
+
+            steps { 
+
+                script { 
+
+                    dockerImage1.run('-d -it -p 8899:80 --name=server-cont') 
+
+                }
+
+            } 
+        }
+        stage('Building client-image ') { 
+
+            steps { 
+
+                script { 
+                    dockerImage2 = docker.build("client-image"+":$BUILD_NUMBER", "./client") 
+
+                }
+
+            } 
+        }
         
         stage('Run and Test our Images') {
             
             steps {
                 script {
-                    dockerImage1.run('-d -it -p 8899:80 --name=server-cont')
                     dockerImage2.run('--name=client-cont')
                 }
             }
