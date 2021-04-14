@@ -53,12 +53,20 @@ pipeline {
             } 
         }
         
-        stage('Run and Test our Images') {
+        stage('Run client Image') {
             
             steps {
                 script {
                     dockerImage2.run('--name=client-cont')
                 }
+            }
+        }
+         stage('Testing ') {
+             agent {
+                docker { image "client-image"+":$BUILD_NUMBER" }
+            }
+            steps {
+                sh "./validation.sh"
             }
         }
 
