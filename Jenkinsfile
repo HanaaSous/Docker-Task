@@ -67,7 +67,7 @@ pipeline {
                   docker.image("client-image"+":$BUILD_NUMBER").inside {
                       sh 'cd /'
                       sh 'ls'
-                      sh './validation.sh'
+                      sh './Validation.sh'
                      
                     }
                  }
