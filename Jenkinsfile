@@ -4,7 +4,7 @@ pipeline {
 
         registry1 = "hanaasous/server" 
         registry2 = "hanaasous/client" 
-        gitHubsource = "HanaaSous/Docker-Task"
+        gitHubsource = "hanaaSous/docker-task"
 
         registryCredential = 'docker-hub' 
 
