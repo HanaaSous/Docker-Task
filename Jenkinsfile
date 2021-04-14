@@ -24,7 +24,6 @@ pipeline {
                 script { 
 
                     dockerImage1 = docker.build("server-image"+":$BUILD_NUMBER", "./server")
-                    dockerImage2 = docker.build("client-image"+":$BUILD_NUMBER", "./client") 
 
                 }
 
