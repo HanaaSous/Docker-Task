@@ -62,7 +62,7 @@ pipeline {
             }
         }
          stage('Testing ') {
-             dockerImage2.inside{
+             dockerImage2.inside(){
                  sh './validation.sh'
              }
         }
