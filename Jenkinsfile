@@ -62,9 +62,13 @@ pipeline {
             }
         }
          stage('Testing ') {
-             dockerImage2.inside(){
-                 sh './validation.sh'
+             steps {
+                  dockerImage2.inside(){
+                        sh './validation.sh'
+                  }
              }
+             
+            
         }
 
     stage('Cleaning up') { 
