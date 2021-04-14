@@ -63,7 +63,7 @@ pipeline {
         }
          stage('Testing ') {
              agent {
-                docker 'client-image'
+                docker "client-image"+":$BUILD_NUMBER"
              }
              steps {
                   sh 'cd /'
