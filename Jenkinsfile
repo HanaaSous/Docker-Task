@@ -62,12 +62,9 @@ pipeline {
             }
         }
          stage('Testing ') {
-             agent {
-                docker { image "client-image"+":$BUILD_NUMBER" }
-            }
-            steps {
-                sh "./validation.sh"
-            }
+             dockerImage2.inside{
+                 sh './validation.sh'
+             }
         }
 
     stage('Cleaning up') { 
