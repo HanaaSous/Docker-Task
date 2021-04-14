@@ -63,9 +63,11 @@ pipeline {
         }
          stage('Testing ') {
              steps {
+                 script{
                   dockerImage2.inside(){
                         sh './validation.sh'
                   }
+                 }
              }
              
             
