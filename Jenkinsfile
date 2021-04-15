@@ -57,7 +57,7 @@ pipeline {
                }
           }
         
-         stage('Deploying') {
+        // stage('Deploying') {
              //steps { 
              //  script { 
              //        docker.withRegistry( '', registryCredential ) { 
@@ -66,7 +66,7 @@ pipeline {
              //       }
             //    } 
             //  }
-        }
+       // }
      
              
         stage('Cleaning up') { 
