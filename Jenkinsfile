@@ -4,6 +4,7 @@ pipeline {
         registryCredential = 'docker-hub' 
         dockerImage1 = '' 
         dockerImage2 = ''
+	    httpdrpm = ''
 
     }
 
@@ -52,8 +53,9 @@ pipeline {
 		        }
              }
              steps {
-                  sh 'if (( rpm -qa httpd == *"httpd"* )); then echo "apache server is installed on client container"; else echo "apache server is NOT installed on client container"; fi'
-               }
+		  httpdrpm = sh 'rpm -qa httpd'
+		  sh 'echo $httpdrpm '
+	     }
           }
         
         // stage('Deploying') {
