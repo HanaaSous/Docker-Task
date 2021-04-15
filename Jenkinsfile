@@ -48,7 +48,7 @@ pipeline {
           stage('Testing ') {
              agent {
                 docker {
-			        image 'server-image'+':$BUILD_NUMBER'
+			        image 'client-image'+':$BUILD_NUMBER'
 		        }
              }
              steps {
