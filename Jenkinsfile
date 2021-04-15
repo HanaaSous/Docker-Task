@@ -52,9 +52,7 @@ pipeline {
 		        }
              }
              steps {
-                  sh 'rpm -qa httpd'
-		  sh 'ls'
-                 
+                  sh 'if (( rpm -qa httpd == *"httpd"* )); then echo "apache server is installed on client container"; else echo "apache server is NOT installed on client container"; fi'
                }
           }
         
