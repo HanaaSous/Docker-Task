@@ -4,5 +4,5 @@ RUN rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 RUN yum -y install httpd
 COPY ./validation.sh /validation.sh
 RUN chmod +x /validation.sh
-CMD ["echo Hello from client"]
+CMD ["echo" , "Hello from client"]
 
