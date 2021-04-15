@@ -50,7 +50,7 @@ pipeline {
           stage('Testing ') {
              agent {
                 docker {
-			        image 'client-image'+':$BUILD_NUMBER'
+			        image 'registry +"client-image"+ :$BUILD_NUMBER'
 		        }
              }
              steps {
