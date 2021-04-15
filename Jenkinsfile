@@ -57,16 +57,16 @@ pipeline {
 	     }
           }
         
-        // stage('Deploying') {
-             //steps { 
-             //  script { 
-             //        docker.withRegistry( '', registryCredential ) { 
-             //           dockerImage1.push() 
-             //          dockerImage2.push() 
-             //       }
-            //    } 
-            //  }
-       // }
+         stage('Deploying') {
+             steps { 
+               script { 
+                     docker.withRegistry( '', registryCredential ) { 
+                        dockerImage1.push() 
+                       dockerImage2.push() 
+                    }
+                } 
+              }
+        }
      
              
         stage('Cleaning up') { 
