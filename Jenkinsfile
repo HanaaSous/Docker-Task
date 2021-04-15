@@ -45,9 +45,17 @@ pipeline {
             }
         }
         
-         stage('Testing') {
- 
-        }
+          stage('Testing ') {
+             agent {
+                docker {
+			        image 'server-image'+':$BUILD_NUMBER'
+		        }
+             }
+             steps {
+                  sh 'rpm -qa httpd'
+                 
+               }
+          }
         
          stage('Deploying') {
              //steps { 
