@@ -53,8 +53,7 @@ pipeline {
 		        }
              }
              steps {
-		  httpdrpm = sh 'rpm -qa httpd'
-		  sh 'echo $httpdrpm '
+		  sh 'rpm -qa httpd'
 	     }
           }
         
