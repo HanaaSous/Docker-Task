@@ -1,6 +1,7 @@
 pipeline { 
 
     environment { 
+	registry = 'hanaasous/'
         registryCredential = 'docker-hub' 
         dockerImage1 = '' 
         dockerImage2 = ''
@@ -15,7 +16,7 @@ pipeline {
             stage('Building server-image ') { 
                 steps { 
                     script { 
-                       dockerImage1 = docker.build("server-image"+":$BUILD_NUMBER", "./server")
+                       dockerImage1 = docker.build(registry +"server-image"+":$BUILD_NUMBER", "./server")
                    }
                 } 
             }
@@ -31,7 +32,7 @@ pipeline {
             stage('Building client-image ') { 
                 steps { 
                     script { 
-                        dockerImage2 = docker.build("client-image"+":$BUILD_NUMBER", "./client") 
+                        dockerImage2 = docker.build(registry + "client-image"+":$BUILD_NUMBER", "./client") 
                     }
                 } 
             }
