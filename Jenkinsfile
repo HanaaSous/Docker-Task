@@ -1,13 +1,7 @@
 pipeline { 
 
     environment { 
-
-        registry1 = "hanaasous/server" 
-        registry2 = "hanaasous/client" 
-        gitHubsource = "hanaasous/docker-task"
-
         registryCredential = 'docker-hub' 
-
         dockerImage1 = '' 
         dockerImage2 = ''
 
@@ -17,41 +11,30 @@ pipeline {
 
     stages { 
 
-        stage('Building server-image ') { 
-
-            steps { 
-
-                script { 
-
-                    dockerImage1 = docker.build("server-image"+":$BUILD_NUMBER", "./server")
-
-                }
-
-            } 
-        }
-          stage('Runing server-image ') { 
-
-            steps { 
-
-                script { 
-
-                    dockerImage1.run('-d -it -p 8899:80 --name=server-cont') 
-
-                }
-
-            } 
-        }
-        stage('Building client-image ') { 
-
-            steps { 
-
-                script { 
-                    dockerImage2 = docker.build("client-image"+":$BUILD_NUMBER", "./client") 
-
-                }
-
-            } 
-        }
+            stage('Building server-image ') { 
+                steps { 
+                    script { 
+                       dockerImage1 = docker.build("server-image"+":$BUILD_NUMBER", "./server")
+                   }
+                } 
+            }
+        
+              stage('Runing server-image ') { 
+                steps { 
+                    script { 
+                        dockerImage1.run('-d -it -p 8899:80 --name=server-cont') 
+                    }
+                } 
+            }
+        
+            stage('Building client-image ') { 
+                steps { 
+                    script { 
+                        dockerImage2 = docker.build("client-image"+":$BUILD_NUMBER", "./client") 
+                    }
+                } 
+            }
+        
         
         stage('Run client Image') {
             
@@ -61,32 +44,28 @@ pipeline {
                 }
             }
         }
-         stage('Testing ') {
-             agent {
-                docker "client-image"+":$BUILD_NUMBER"
-             }
-             steps {
-                  sh 'cd /'
-                  sh 'ls'
-                 
-                 }
-             }
-             
-            
         
-
-    stage('Cleaning up') { 
-
-            steps { 
-
-                sh "docker stop server-cont client-cont" 
-                sh "docker rm server-cont client-cont" 
-
-
-            }
-
-        } 
-
-    }
-
+         stage('Testing') {
+ 
+        }
+        
+         stage('Deploying') {
+             //steps { 
+             //  script { 
+             //        docker.withRegistry( '', registryCredential ) { 
+             //           dockerImage1.push() 
+             //          dockerImage2.push() 
+             //       }
+            //    } 
+            //  }
+        }
+     
+             
+        stage('Cleaning up') { 
+                steps { 
+                    sh "docker stop server-cont client-cont" 
+                    sh "docker rm server-cont client-cont" 
+                }
+            } 
+        }
 }
