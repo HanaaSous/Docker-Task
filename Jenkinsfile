@@ -53,6 +53,7 @@ pipeline {
              }
              steps {
                   sh 'rpm -qa httpd'
+		  sh 'ls'
                  
                }
           }
